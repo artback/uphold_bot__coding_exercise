@@ -15,12 +15,12 @@ test("getTickers", async () => {
 test("getTickers", async () => {
   const expected = "something happened";
   mockAxios.get = () =>
-      Promise.reject({
-        response: "something happened",
-      });
+    Promise.reject({
+      response: "something happened",
+    });
   try {
-      await getTickerPair("EUR-USD");
-  }catch(e){
-      expect(e).toStrictEqual(expected);
+    await getTickerPair("EUR-USD");
+  } catch (e) {
+    expect(e).toStrictEqual(expected);
   }
 });

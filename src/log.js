@@ -1,4 +1,7 @@
-const Log = (pair, { initial, current, processed: { oscillation, negative } }) => {
+const Log = (
+  pair,
+  { initial, current, processed: { oscillation, negative } }
+) => {
   if (oscillation) {
     if (negative) {
       console.log(`${pair} went down from ${initial} to ${current}`);

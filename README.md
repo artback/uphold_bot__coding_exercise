@@ -1,26 +1,35 @@
-## Uphold bot 
-### retrieves price for currency pairs 
+## Uphold bot
+
+### retrieves price for currency pairs
+
 #### logs any oscillation outside of the given precision
 
-
 ### How to install
-``git clone https://github.com/artback/uphold_bot__coding_exercise/``
+
+`git clone https://github.com/artback/uphold_bot__coding_exercise/`
 
 ### How to use
 
-```npm install```
+`npm install`
 
-```npm start```
- 
-or using docker 
+`npm start`
 
-``` docker build -t uphold . && docker run -it uphold```
+or using docker
+
+` docker build -t uphold . && docker run -it uphold`
+
+#### test
+
+`npm test`
 
 ### Dependencies
- Axios
+
+Axios
 
 ### Devdependencies
-Jest, consoleMock, Babel 
+
+Jest, consoleMock, Babel
 
 ### Coverage:
+
 100% unit test coverage

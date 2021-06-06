@@ -11,9 +11,9 @@ export function oscillation(precision) {
    * @returns {object}{oscillation: number,negative: number}
    */
   return (number1, number2) => {
-    const diff = number2-number1;
+    const diff = number2 - number1;
     return {
-      oscillation: Math.abs((diff /number1)*100) > precision,
+      oscillation: precision < Math.abs((diff / number1) * 100),
       negative: diff < 0,
     };
   };

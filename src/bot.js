@@ -1,17 +1,16 @@
 /**
- * @param {{
- * fetchInterval: number, precision: number, currencyPairs: string[],
- * forPair: function({pair: string,retriever: function()}),
- * getTicker: function(pair: string)
- * priceForPair: function(pair: string)
- * }} CONFIG
+ * @param {Object} config Configuration to run bot
+ * @param {number} config.fetchInterval interval in ms between each fetch,
+ * @param {function} config.retriever used on each currency pair to retrieve new data
+ * @param {[]string} config.currencyPairs
+ * @param {function} config.forEach run after each currency pair data have been retrieved
  */
 export const upholdBot = ({
   fetchInterval,
-  priceForPair,
+  retriever,
   currencyPairs,
-  forPair,
+  forEach,
 }) => {
-  const retrievers = currencyPairs.map(priceForPair);
-  setInterval(() => retrievers.forEach(forPair), fetchInterval);
+  const retrievers = currencyPairs.map(retriever);
+  setInterval(() => retrievers.forEach(forEach), fetchInterval);
 };
