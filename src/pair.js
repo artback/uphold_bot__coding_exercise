@@ -1,5 +1,5 @@
 /**
- * Returns a function which runs all the given output functions given a currency pair and it's retriever function
+ * Returns a function awaits the retriever call and runs all the output functions with the given data
  * @param {...function} outputFn  For storage or logging the result
  */
 function forPair(...outputFn) {
