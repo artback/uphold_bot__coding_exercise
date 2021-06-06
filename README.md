@@ -21,3 +21,6 @@ or using docker
 
 ### Devdependencies
 Jest, consoleMock, Babel 
+
+### Coverage:
+100% unit test coverage
