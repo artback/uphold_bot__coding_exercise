@@ -17,7 +17,7 @@ or using docker
 ``` docker build -t uphold . && docker run -it uphold```
 
 ### Dependencies
- ```Axios```
+ Axios
 
 ### Devdependencies
- ```Jest, consoleMock, Babel```    
+Jest, consoleMock, Babel 
