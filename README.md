@@ -4,7 +4,7 @@
 
 
 ### How to install
-``git clone ``
+``git clone https://github.com/artback/uphold_bot__coding_exercise/``
 
 ### How to use
 
@@ -20,4 +20,4 @@ or using docker
  ```Axios```
 
 ### Devdependencies
- ```Jest, consoleMock, Babel```
+ ```Jest, consoleMock, Babel```    
