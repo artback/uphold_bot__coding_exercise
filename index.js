@@ -2,9 +2,8 @@ import { upholdBot } from "./src/bot.js";
 import { Log } from "./src/log.js";
 import { getTickerPair } from "./src/tickers.js";
 import { oscillation } from "./src/oscillation.js";
-import {forPair } from "./src/pair.js";
+import { forPair } from "./src/pair.js";
 import { priceForPair } from "./src/price.js";
-
 
 const CONFIG = {
   currencyPairs: ["BTC-USD", "BTC-SEK", "EUR-SEK"],

@@ -24,12 +24,12 @@ test("priceForPair: negative oscillation", async () => {
 
 test("priceForPair: ask is undefined", async () => {
   const fn = priceForPair(
-      () => Promise.resolve({}),
-      handler({oscillation: true, negative: true})
+    () => Promise.resolve({}),
+    handler({ oscillation: true, negative: true })
   )("EUR-SEK");
-  try{
-    await fn.retriever()
-  }catch (e) {
-    expect(e).toBeInstanceOf(Error)
+  try {
+    await fn.retriever();
+  } catch (e) {
+    expect(e).toBeInstanceOf(Error);
   }
 });
