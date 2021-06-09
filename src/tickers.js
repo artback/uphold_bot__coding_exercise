@@ -9,11 +9,6 @@ const BASE_URL = "https://api.uphold.com/v0/ticker";
  * @returns {function} returns the data or error
  */
 const getTickerPair = (pair) =>
-  axios
-    .get(`${BASE_URL}/${pair}`)
-    .then((res) => res.data)
-    .catch((e) => {
-      throw e.response;
-    });
+  axios.get(`${BASE_URL}/${pair}`).then((res) => res.data);
 
 export { getTickerPair };
