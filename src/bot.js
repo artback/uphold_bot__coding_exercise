@@ -12,5 +12,5 @@ export const upholdBot = ({
   forEach,
 }) => {
   const retrievers = currencyPairs.map(retriever);
-  setInterval(() => retrievers.forEach(forEach), fetchInterval);
+  return setInterval(() => retrievers.forEach(forEach), fetchInterval);
 };
