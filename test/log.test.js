@@ -6,7 +6,8 @@ beforeEach(() => {
   console.clearHistory();
 });
 test("Log: test positive log", () => {
-  Log("USD-SEK", {
+  Log({
+    pair: "USD-SEK",
     initial: 0,
     current: 5,
     processed: { oscillation: true, negative: false },
@@ -16,7 +17,8 @@ test("Log: test positive log", () => {
   ]);
 });
 test("Log test negative log", () => {
-  Log("USD-SEK", {
+  Log({
+    pair: "USD-SEK",
     initial: 0,
     current: -1,
     processed: { oscillation: true, negative: true },
@@ -26,7 +28,8 @@ test("Log test negative log", () => {
   ]);
 });
 test("Log test non oscillation", () => {
-  Log("USD-SEK", {
+  Log({
+    pair: "USD-SEK",
     initial: 0,
     current: -1,
     processed: { oscillation: false, negative: true },

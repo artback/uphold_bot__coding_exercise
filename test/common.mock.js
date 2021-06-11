@@ -6,10 +6,3 @@ export function getTicker(price, step) {
     });
   };
 }
-export function getTickerReject(reason) {
-  return function () {
-    return new Promise((resolve, reject) => {
-      reject(reason);
-    });
-  };
-}

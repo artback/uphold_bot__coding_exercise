@@ -6,17 +6,27 @@ beforeEach(() => {
 afterEach(() => {
   jest.useRealTimers();
 });
-test("bot test", async () => {
+test("bot test, send Data", async () => {
   const PAIR = "USD-EUR";
-  upholdBot({
+  const event = upholdBot({
     fetchInterval: 500,
-    retriever: () => ({ pair: "USD-EUR", retriever: () => 0.5 }),
+    retriever: () => () => Promise.resolve(0.5),
     currencyPairs: ["USD-EUR"],
-    forEach: ({ pair, retriever }) => {
-      expect(pair).toStrictEqual(PAIR);
-      expect(retriever()).toStrictEqual(0.5);
-      jest.clearAllTimers();
-    },
   });
-  jest.runAllTimers();
+  event.onData((data) => {
+    expect(data).toStrictEqual(0.5);
+  });
+  jest.advanceTimersByTime(500);
+});
+test("bot test,send Error", async () => {
+  const PAIR = "USD-EUR";
+  const event = upholdBot({
+    fetchInterval: 500,
+    retriever: () => () => Promise.reject("something"),
+    currencyPairs: ["USD-EUR"],
+  });
+  event.onError((e) => {
+    expect(e).toStrictEqual("something");
+  });
+  jest.advanceTimersByTime(500);
 });
